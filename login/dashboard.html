@@ -6,7 +6,7 @@
   <title>Dashboard - Rasaaanggur</title>
   <link rel="stylesheet" href="style.css"> 
   <script>
-    // PROTEKSI: Jika belum login, langsung tendang balik ke halaman login
+    // SATPAM: Kalau belum login, langsung tendang balik ke halaman login
     if (localStorage.getItem("isLoggedIn") !== "true") {
         window.location.href = "index.html";
     }
@@ -14,17 +14,17 @@
 </head>
 <body>
 
-  <div class="wrapper" style="width: 500px;"> <h2>Selamat Datang Kembali!</h2>
+  <div class="wrapper" style="width: 500px;">
+    <h2>Selamat Datang Kembali!</h2>
     <h3 style="color: #ffcc00; margin-bottom: 20px; font-size: 1.5rem;">
       👋 Halo, <span id="userDisplay">Pengguna</span>
     </h3>
     
     <p style="color: #fff; margin-bottom: 30px; font-size: 0.95rem; line-height: 1.6;">
-      Ini adalah halaman utama lo setelah sukses login. Di sini lo bisa menaruh konten utama website, data anggota, atau menu rahasia lainnya.
+      Lo berhasil masuk! Nanti di bagian bawah sini bisa kita isi sama foto-foto produk rasa anggur lo yang lo maksud itu.
     </p>
 
-    <button id="logoutBtn" style="background: #ff4d4d; color: #fff;">Keluar</button>
-    
+    <button id="logoutBtn" style="background: #ff4d4d; color: #fff;">Keluar / Log Out</button>
   </div>
 
   <script>
@@ -38,7 +38,7 @@
     document.getElementById("logoutBtn").addEventListener("click", function() {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("username");
-        window.location.href = "index.html"; // Balik ke login
+        window.location.href = "index.html"; // Balik ke halaman login
     });
   </script>
 </body>
