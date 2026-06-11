@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Rasaaanggur</title>
+  <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+  <div class="wrapper">
+    <form id="registerForm">
+      <h2>Register</h2>
+      
+      <div class="input-field">
+        <input type="text" id="username" required>
+        <label>Enter your username</label>
+      </div>
+
+      <div class="input-field">
+        <input type="email" id="email" required>
+        <label>Enter your email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label>Create password</label>
+      </div>
+
+      <p id="message" style="color: #fff; margin-bottom: 15px; font-size: 0.9rem; text-align: center; font-weight: 500;"></p>
+
+      <button type="submit">Sign Up</button>
+      
+      <div class="register">
+        <p>Already have an account? <a href="index.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
