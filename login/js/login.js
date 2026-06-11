@@ -1,36 +1,30 @@
 document.getElementById("loginForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
+  try {
     const res = await fetch("https://herisusanta.my.id/javalogin/api/auth.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `action=login&username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
     });
 
     const data = await res.json();
 
     if (data.status === "success") {
-        // simpan username
-            localStorage.setItem("username", data.username);
-            window.location.href = "../index.html";
-         
-    // } else {
-    //     document.getElementById("message").innerText = "Username / Password salah";alert("Login gagal");
-    // }
-    
+      // 1. Simpan status login ke memori browser
+      localStorage.setItem("isLoggedIn", "true");
+      // 2. Simpan nama pengguna
+      localStorage.setItem("username", data.username);
+      
+      // 3. Alihkan langsung ke file dashboard.html
+      window.location.href = "dashboard.html";
     } else {
-    const alertBox = document.getElementById("alertBox");
-    alertBox.innerText = "Username atau Password salah, silahkan coba lagi";
-    alertBox.style.display = "block";
-
-    setTimeout(() => {
-        alertBox.style.display = "none";
-    }, 3000);
-} 
-   
+      alert("Username atau Password salah, silakan coba lagi");
+    }
+  } catch (error) {
+    alert("Terjadi kesalahan jaringan, silakan coba lagi nanti");
+  }
 });
