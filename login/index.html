@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html>
 <head>
   <meta charset="UTF-8">
@@ -33,6 +32,19 @@
     </form>
   </div>
 
-<script src="js/login.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload halaman
+        
+        const usernameInput = document.getElementById('username').value;
+        
+        // Simpan status login dan nama ke memori browser
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', usernameInput);
+        
+        // Tendang balik ke halaman utama setelah sukses login
+        window.location.href = '../index.html'; 
+    });
+  </script>
 </body>
 </html>
