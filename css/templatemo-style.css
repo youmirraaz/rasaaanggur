@@ -434,3 +434,19 @@ border-top-color: #f9c922; -webkit-animation: spin 1.5s linear infinite; /* Chro
 	.cd-hero-slider .cd-full-width { padding-top: 0; }
 	.cd-hero-slider .tm-text { font-size: 1em; }
 }
+
+/* ==========================================================
+   SUNTIKAN KODE BACKGROUND BACKGROUND BY USER
+   ========================================================== */
+.cd-hero-slider li:nth-of-type(1) { background-image: url(../img/bg-01.jpg); background-size: cover; background-position: center; }
+.cd-hero-slider li:nth-of-type(2) { background-image: url(../img/bg-02.jpg); background-size: cover; background-position: center; }
+.cd-hero-slider li:nth-of-type(3) { background-image: url(../img/bg-03.jpg); background-size: cover; background-position: center; }
+
+/* INI DIA BACKGROUND PAGE 4 (TUTORIAL) YANG LO UP TADI */
+.cd-hero-slider li:nth-of-type(4) { 
+    background-image: url(../img/bg-04.jpg); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.cd-hero-slider li:nth-of-type(5) { background-image: url(../img/bg-05.jpg); background-size: cover; background-position: center; }
